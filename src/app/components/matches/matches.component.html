@@ -1,3 +1,16 @@
-<p>
-  matches works!
-</p>
+<div class="div-style">
+  <h2>Tour du:</h2>
+  <h2 class="player-style">Joueur {{currentPlayer}} </h2>
+
+  <br>
+  <br>
+  <h3>Nombre d'allumettes restants: </h3>
+  <h3 class="player-style">{{numberOfMatches}} </h3>
+  <br>
+  <button type="button" class="btn btn-primary" (click)="launchGame(1)">Enlever 1 allumette</button>
+  <button type="button" class="btn btn-secondary" (click)="launchGame(2)">Enlever 2 allumettes</button>
+  <button type="button" class="btn btn-info" (click)="launchGame(3)">Enlever 3 allumettes</button>
+  <br>
+  <br>
+  <h1 class="winner-style" *ngIf="winner">Gagnant: Joueur {{currentPlayer}}</h1>
+</div>

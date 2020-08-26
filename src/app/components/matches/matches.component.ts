@@ -37,12 +37,15 @@ export class MatchesComponent implements OnInit {
       this.winner = true;
     }
 
-    if (this.winner === false) {
-      // end of the round
-      if (this.currentPlayer === 2) {
-        this.currentPlayer = 1;
-      } else {
-        this.currentPlayer = 2;
+    // Game with 3 players
+    if (this.winner === false) {  // end of the round
+      this.currentPlayer += 1;   // we increment the number of players until 3
+      if (this.currentPlayer > 3) {
+        if (this.currentPlayer === 2) {  // if the current player is 2, we increment +1 player
+          this.currentPlayer += 1;
+        } else { // else we take the first player
+          this.currentPlayer = 1;
+        }
       }
     }
   }
